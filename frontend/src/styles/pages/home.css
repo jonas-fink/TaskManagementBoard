@@ -9,10 +9,11 @@
 .home-title {
     font-size: var(--text-5xl);
     font-weight: 700;
-    margin-bottom: var(--spacing-6);
 }
 
 .home-title-accent {
+    font-size: var(--text-5xl);
+    font-weight: 700;
     color: var(--color-emerald-400);
 }
 
