@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { useOrganization } from '@clerk/clerk-react';
 import TaskColumn from './TaskColumn';
 import { createTasks, updateTasks, deleteTasks } from '../services/api';
+import TaskForm from './TaskForm';
 
-const STATUSES = ['pending', 'started', 'completed'];
+const STATUSES = ['pending', 'in_progress', 'done'];
 
 const KanbanBoard = ({ tasks, setTasks, getToken }) => {
     const { membership } = useOrganization();
@@ -102,7 +103,13 @@ const KanbanBoard = ({ tasks, setTasks, getToken }) => {
                 ))}
             </div>
 
-            {showForm && null}
+            {showForm && (
+                <TaskForm
+                    task={editingTask}
+                    onSubmit={handleSubmit}
+                    onCancel={handleCancel}
+                />
+            )}
         </div>
     );
 };

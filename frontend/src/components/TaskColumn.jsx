@@ -2,8 +2,8 @@ import TaskCard from './TaskCard';
 
 const STATUS_LABELS = {
     pending: 'To Do',
-    started: 'In Progress',
-    completed: 'Done',
+    in_progress: 'In Progress',
+    done: 'Done',
 };
 const TaskColumn = ({ status, tasks, onEdit, onDelete }) => {
     return (

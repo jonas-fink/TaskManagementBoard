@@ -23,12 +23,10 @@ const TaskCard = ({ task, onEdit, onDelete }) => {
                         X
                     </button>
                 )}
-                {task.description && (
-                    <p className={'task-card-description'}>
-                        {task.description}
-                    </p>
-                )}
             </div>
+            {task.description && (
+                <p className={'task-card-description'}>{task.description}</p>
+            )}
         </div>
     );
 };

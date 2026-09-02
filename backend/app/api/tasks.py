@@ -53,7 +53,7 @@ def get_task(
 
 @router.put("/{task_id}", response_model=TaskResponse)
 def update_task(
-    task_id: str,
+    task_id: int,
     task_data: TaskUpdate,
     user: AuthUser = Depends(require_edit),
     db: Session = Depends(get_db)
@@ -82,7 +82,7 @@ def update_task(
 
 @router.delete("/{task_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_task(
-    task_id: str,
+    task_id: int,
     user: AuthUser = Depends(require_delete),
     db: Session = Depends(get_db)
 ):

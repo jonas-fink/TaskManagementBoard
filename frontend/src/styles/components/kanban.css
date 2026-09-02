@@ -43,12 +43,12 @@
     border-bottom: 2px solid var(--color-slate-500);
 }
 
-.kanban-column-header-started {
+.kanban-column-header-in_progress {
     background-color: rgba(59, 130, 246, 0.15);
     border-bottom: 2px solid var(--color-blue-500);
 }
 
-.kanban-column-header-completed {
+.kanban-column-header-done {
     background-color: rgba(16, 185, 129, 0.15);
     border-bottom: 2px solid var(--color-emerald-500);
 }
