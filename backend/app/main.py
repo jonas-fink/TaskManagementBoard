@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.database import Base, engine
 from app.models import task  
-from app.api.tasks import router as tasks_router
+from app.api import tasks, webhooks
 
 
 Base.metadata.create_all(bind=engine)
@@ -18,7 +18,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(tasks_router)
+app.include_router(tasks.router)
+app.include_router(webhooks.router)
 
 
 @app.get("/health")

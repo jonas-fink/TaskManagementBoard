@@ -14,6 +14,7 @@ class Config:
     FRONTEND_URL: str = os.getenv("FRONTEND_URL", "http://localhost:5173")
 
     FREE_TIER_MEMBERSHIP_LIMIT: int = 2
-    PRO_TIER_MEMBERSHIP_LIMIT = 0
+    PRO_TIER_MEMBERSHIP_LIMIT: int = 1_000_000  # effectively unlimited; Clerk's 0
+    # sentinel is undocumented, so use a finite value we can reason about
 
 settings = Config()
